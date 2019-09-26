@@ -1,53 +1,62 @@
 from graph import *
 
 import math
+#z is size
 z=2
-windowSize(1200/2, 1000/2)
-canvasSize(1200/2, 1000/2)
+windowSize(1200/z + 1200/z, 1000/z)
+canvasSize(1200/z + 1200/z, 1000/z)
 brushColor("grey")
-rectangle(0, 0, 1200/2, 1000/2)
+#background
+rectangle(0, 0, 1200/z, 1000/z)
 def bs(x, y):
     brushColor("black")
-    rectangle(x, y, x+5, y+5)
+    rectangle(x, y, x+10/z, y+10/z)
 x=0
 for i in range(120):
     y=0
-    if x%2==0:
+    if x%(4/z)==0:
         for j in range(50):
             bs(x, y)
-            y+=10
+            y+=20/z
     else:
-        y=5
+        y=10/z
         for k in range(49):
             bs(x, y)
-            y+=10
-    x+=5
+            y+=20/z
+    x+=10/z
+#arms
 brushColor(233, 198, 175)
-polygon([(425/2, 1000/2),(92/2,0), (17/2, 0), (350/2, 1000/2), (425/2, 1000/2)])
+polygon([(425/z, 1000/z),(92/z,0), (17/z, 0), (350/z, 1000/z), (425/z, 1000/z)])
 
-polygon([(775/2, 1000/2), (1108/2,0), (1183/2,0), (850/2, 1000/2), (775/2, 1000/2)])
+polygon([(775/z, 1000/z), (1108/z,0), (1183/z,0), (850/z, 1000/z), (775/z, 1000/z)])
+#body
 brushColor("orange")
-circle(600/2, 1000/2, 300/2)
-polygon([(310/2, 930/2), (420/2, 810/2), (345/2, 770/2), (270/2, 800/2), (250/2, 850/2), (310/2,930/2)])
-polygon([(890/2, 930/2), (780/2, 810/2), (855/2, 770/2), (930/2, 800/2), (950/2, 850/2), (890/2,930/2)])
+circle(600/z, 1000/z, 300/z)
+polygon([(310/z, 930/z), (420/z, 810/z), (345/z, 770/z), (270/z, 800/z), (250/z, 850/z), (310/z,930/z)])
+polygon([(890/z, 930/z), (780/z, 810/z), (855/z, 770/z), (930/z, 800/z), (950/z, 850/z), (890/z,930/z)])
+#face
 brushColor(233, 198, 175)
-circle(600/2, 500/2, 250/2)
+circle(600/z, 500/z, 250/z)
+#nose
 brushColor("brown")
-polygon([(600/2, 500/2+15), ((600/2)+13, 500/2 + 8), ((600/2) - 13, 500/2 + 8), (600/2, 500/2+15)])
+polygon([(600/z, 500/z+30/z), ((600/z)+26/z, 500/z + 16/z), ((600/z) - 26/z, 500/z + 16/z), (600/z, 500/z+30/z)])
+#mouth
 brushColor("red")
-polygon([(600/2, 500/2+ 75), (600/2+ 75,500/2+30), (600/2-75, 500/2+30), (600/2, 500/2+75)])
+polygon([(600/z, 500/z+ 150/z), (600/z+ 150/z,500/z+60/z), (600/z-150/z, 500/z+60/z), (600/z, 500/z+150/z)])
+#eyes
 brushColor("blue")
-circle(525/2, 430/2, 60/2)
-circle(675/2, 430/2, 60/2)
+circle(525/z, 430/z, 60/z)
+circle(675/z, 430/z, 60/z)
 brushColor("black")
-circle(525/2, 430/2, 20/2)
-circle(675/2, 430/2, 20/2) 
+circle(525/z, 430/z, 20/z)
+circle(675/z, 430/z, 20/z) 
+#haircut
 def tr(x, y):
     brushColor(212, 42, 255)
-    polygon([(x,y), (x+60/2*1/2, y- 60/2*(3**0.5)/2), (x-60/2*1/2,y-60/2*(3**0.5)/2)])
-y=(500-110)/2
-x=(600-219)/2
-sidelenght=85/2
+    polygon([(x,y), (x+60/z*1/2, y- 60/z*(3**0.5)/2), (x-60/z*1/2,y-60/z*(3**0.5)/2)])
+y=(500-110)/z
+x=(600-219)/z
+sidelenght=85/z
 for i in range(5):
     a=math.cos(math.pi*(1/3-i/12))
     b=math.sin(math.pi*(1/3-i/12))
@@ -56,14 +65,14 @@ for i in range(5):
     brushColor(212, 42, 255)
     polygon([(x,y), (x+sidelenght*a, y- sidelenght*b), (x-sidelenght*c,y-sidelenght*d)])
     if i==3:
-        y-=10/2
+        y-=10/z
     else:
-        y-=37/2
+        y-=37/z
     
-    x+=35/2
+    x+=35/z
     
-x=600/2
-y=250/2
+x=600/z
+y=250/z
 for i in range(5):
     a=math.cos(math.pi*(1/3-5/12-i/12))
     b=math.sin(math.pi*(1/3-5/12-i/12))
@@ -73,30 +82,31 @@ for i in range(5):
     polygon([(x,y), (x+sidelenght*a, y- sidelenght*b), (x-sidelenght*c,y-sidelenght*d)])
     
     if i==3:
-        x+=40/2
+        x+=40/z
     elif i==0:
-        x+=80/2
+        x+=80/z
     else:
-        x+=50/2
-    y+=35/2
+        x+=50/z
+    y+=35/z
 #brushColor(233, 198, 175)
 #circle(123/2 , 150/2, 90/2)
 #circle(1077/2, 150/2, 90/2)
-a=70/2
-b=(110/2)
-x=123/2
-y=60/2
+#hands
+a=70/z
+b=(110/z)
+x=123/z
+y=60/z
 s=[(x, y)]
-y=150/2-b
+y=150/z-b
 
 for i in range(2*int(b)):
-    x=(123/2-a*((1-((y-150/2)**2)/(b**2))**2)**0.25)
+    x=(123/z-a*((1-((y-150/z)**2)/(b**2))**2)**0.25)
     
     coord=(x, y)
     s.append(coord)
     y+=1
 for i in range(2*int(b)):
-    x=(123/2+a*((1-((y-150/2)**2)/(b**2))**2)**0.25)
+    x=(123/z+a*((1-((y-150/z)**2)/(b**2))**2)**0.25)
     
     coord=(x, y)
     s.append(coord)
@@ -106,19 +116,19 @@ brushColor(233, 198, 175)
 polygon(s)
 
 
-x=1077/2
-y=60/2
+x=1077/z
+y=60/z
 s=[(x, y)]
-y=150/2-b
+y=150/z-b
 
 for i in range(2*int(b)):
-    x=(1077/2-a*((1-((y-150/2)**2)/(b**2))**2)**0.25)
+    x=(1077/z-a*((1-((y-150/z)**2)/(b**2))**2)**0.25)
     
     coord=(x, y)
     s.append(coord)
     y+=1
 for i in range(2*int(b)):
-    x=(1077/2+a*((1-((y-150/2)**2)/(b**2))**2)**0.25)
+    x=(1077/z+a*((1-((y-150/z)**2)/(b**2))**2)**0.25)
     
     coord=(x, y)
     s.append(coord)
@@ -126,9 +136,140 @@ for i in range(2*int(b)):
 
 brushColor(233, 198, 175)
 polygon(s)
+def draw_human(xc):
+    #grid
+    """
+    x=xc
+    for i in range(120):
+        y=0
+        if x%(4/z)==0:
+            for j in range(50):
+                bs(x, y)
+                y+=20/z
+        else:
+            y=10/z
+            for k in range(49):
+                bs(x, y)
+                y+=20/z
+        x+=10/z"""
+	#arms
+    brushColor(233, 198, 175)
+    polygon([(425/z+xc/z, 1000/z),(92/z+xc/z,0), (17/z+xc/z, 0), (350/z+xc/z, 1000/z), (425/z+xc/z, 1000/z)])
 
+    polygon([(775/z+xc/z, 1000/z), (1108/z+xc/z,0), (1183/z+xc/z,0), (850/z+xc/z, 1000/z), (775/z+xc/z, 1000/z)])
+    #body
+    brushColor("orange")
+    circle(600/z+xc/z, 1000/z, 300/z)
+    polygon([(310/z+xc/z, 930/z), (420/z+xc/z, 810/z), (345/z+xc/z, 770/z), (270/z+xc/z, 800/z), (250/z+xc/z, 850/z), (310/z+xc/z,930/z)])
+    polygon([(890/z+xc/z, 930/z), (780/z+xc/z, 810/z), (855/z+xc/z, 770/z), (930/z+xc/z, 800/z), (950/z+xc/z, 850/z), (890/z+xc/z,930/z)])
+    #face
+    brushColor(233, 198, 175)
+    circle(600/z+xc/z, 500/z, 250/z)
+    #nose
+    brushColor("brown")
+    polygon([(600/z+xc/z, 500/z+30/z), ((600/z+xc/z)+26/z, 500/z + 16/z), ((600/z+xc/z) - 26/z, 500/z + 16/z), (600/z+xc/z, 500/z+30/z)])
+    #mouth
+    brushColor("red")
+    polygon([(600/z+xc/z, 500/z+ 150/z), (600/z+xc/z+ 150/z,500/z+60/z), (600/z-150/z+xc/z, 500/z+60/z), (600/z+xc/z, 500/z+150/z)])
+    #eyes
+    brushColor("blue")
+    circle(525/z+xc/z, 430/z, 60/z)
+    circle(675/z+xc/z, 430/z, 60/z)
+    brushColor("black")
+    circle(525/z+xc/z, 430/z, 20/z)
+    circle(675/z+xc/z, 430/z, 20/z) 
+    #haircut
+    def tr(x, y):
+        brushColor(212, 42, 255)
+        polygon([(x+xc/z,y), (x+xc/z+60/z*1/2, y- 60/z*(3**0.5)/2), (x+xc/z-60/z*1/2,y-60/z*(3**0.5)/2)])
+    y=(500-110)/z
+    x=(600-219)/z
+    sidelenght=85/z
+    for i in range(5):
+        a=math.cos(math.pi*(1/3-i/12))
+        b=math.sin(math.pi*(1/3-i/12))
+        c=math.cos(math.pi*(1/3+i/12))
+        d=math.sin(math.pi*(1/3+i/12))
+        brushColor(212, 42, 255)
+        polygon([(x+xc/z,y), (x+xc/z+sidelenght*a, y- sidelenght*b), (x+xc/z-sidelenght*c,y-sidelenght*d)])
+        if i==3:
+            y-=10/z
+        else:
+            y-=37/z
+    
+        x+=35/z
+    
+    x=600/z
+    y=250/z
+    for i in range(5):
+        a=math.cos(math.pi*(1/3-5/12-i/12))
+        b=math.sin(math.pi*(1/3-5/12-i/12))
+        c=math.cos(math.pi*(1/3+5/12+i/12))
+        d=math.sin(math.pi*(1/3+5/12+i/12))
+        brushColor(212, 42, 255)
+        polygon([(x+xc/z,y), (x+xc/z+sidelenght*a, y- sidelenght*b), (x+xc/z-sidelenght*c,y-sidelenght*d)])
+    
+        if i==3:
+            x+=40/z
+        elif i==0:
+            x+=80/z
+        else:
+            x+=50/z
+        y+=35/z
+    #brushColor(233, 198, 175)
+    #circle(123/2 , 150/2, 90/2)
+    #circle(1077/2, 150/2, 90/2)
+    #hands
+    a=70/z
+    b=(110/z)
+    x=123/z+xc/z
+    y=60/z
+    s=[(x, y)]
+    y=150/z-b
+
+    for i in range(2*int(b)):
+        x=(123/z+xc/z-a*((1-((y-150/z)**2)/(b**2))**2)**0.25)
+    
+        coord=(x, y)
+        s.append(coord)
+        y+=1
+    for i in range(2*int(b)):
+        x=(123/z+ xc/z+a*((1-((y-150/z)**2)/(b**2))**2)**0.25)
+    
+        coord=(x, y)
+        s.append(coord)
+        y-=1
+
+        brushColor(233, 198, 175)
+        polygon(s)
+
+
+    x=1077/z+xc/z
+    y=60/z
+    s=[(x, y)]
+    y=150/z-b
+
+    for i in range(2*int(b)):
+        x=(1077/z+xc/z-a*((1-((y-150/z)**2)/(b**2))**2)**0.25)
+    
+        coord=(x, y)
+        s.append(coord)
+        y+=1
+    for i in range(2*int(b)):
+        x=(1077/z+ xc/z+a*((1-((y-150/z)**2)/(b**2))**2)**0.25)
+    
+        coord=(x, y)
+        s.append(coord)
+        y-=1
+    brushColor(233, 198, 175)
+    polygon(s)
+#end of function
+#create new human
+draw_human(1200)
+
+#banner: python is amazing
 brushColor("green")
-rectangle(0, 0, 1200/2, 160/2)
+rectangle(0, 0, 1200/z, 160/z)
 penSize(5)
 penColor(0, 0, 0)
 #py
