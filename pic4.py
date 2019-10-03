@@ -280,8 +280,7 @@ def draw_human(xc):
         c = math.cos(math.pi * (1 / 3 + 5 / 12 + i / 12))
         d = math.sin(math.pi * (1 / 3 + 5 / 12 + i / 12))
         brushColor(212, 42, 255)
-        polygon([(x + xc / z, y),
-            (x + xc / z + sidelenght * a, y - sidelenght * b), (x + xc / z - sidelenght * c, y - sidelenght * d)])
+        polygon([(x + xc / z, y), (x + xc / z + sidelenght * a, y - sidelenght * b), (x + xc / z - sidelenght * c, y - sidelenght * d)])
 
         if i == 3:
             x += 40 / z
