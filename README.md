@@ -1,2 +1,2 @@
 # lab3_belskii
-it's a test
+[![Build Status](https://travis-ci.com/belskii/lab3_belskii.svg?branch=master)](https://travis-ci.com/belskii/lab3_belskii)

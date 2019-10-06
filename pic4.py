@@ -53,7 +53,7 @@ polygon([
     (270 / z, 800 / z),
     (250 / z, 850 / z),
     (310 / z, 930 / z),
-    ])
+])
 polygon([
     (890 / z, 930 / z),
     (780 / z, 810 / z),
@@ -61,7 +61,7 @@ polygon([
     (930 / z, 800 / z),
     (950 / z, 850 / z),
     (890 / z, 930 / z),
-    ])
+])
 
 # face
 
@@ -71,12 +71,14 @@ circle(600 / z, 500 / z, 250 / z)
 # nose
 
 brushColor('brown')
-polygon([(600 / z, 500 / z + 30 / z), (600 / z + 26 / z, 500 / z + 16 / z), (600 / z - 26 / z, 500 / z + 16 / z), (600 / z, 500 / z + 30 / z)])
+polygon([(600 / z, 500 / z + 30 / z), (600 / z + 26 / z, 500 / z + 16 / z), (600 / z - 26 / z, 500 / z + 16 / z),
+         (600 / z, 500 / z + 30 / z)])
 
 # mouth
 
 brushColor('red')
-polygon([(600 / z, 500 / z + 150 / z), (600 / z + 150 / z, 500 / z + 60 / z), (600 / z - 150 / z, 500 / z + 60 / z), (600 / z, 500 / z + 150 / z)])
+polygon([(600 / z, 500 / z + 150 / z), (600 / z + 150 / z, 500 / z + 60 / z), (600 / z - 150 / z, 500 / z + 60 / z),
+         (600 / z, 500 / z + 150 / z)])
 
 # eyes
 
@@ -179,9 +181,9 @@ for i in range(2 * int(b)):
 brushColor(233, 198, 175)
 polygon(s)
 
-
+"""
 def draw_human(xc):
-    """
+
     x=xc
     for i in range(120):
         y=0
@@ -194,15 +196,17 @@ def draw_human(xc):
             for k in range(49):
                 bs(x, y)
                 y+=20/z
-        x+=10/z"""
+        x+=10/z
 
     # grid
     # arms
 
     brushColor(233, 198, 175)
-    polygon([(425 / z + xc / z, 1000 / z), (92 / z + xc / z, 0), (17 / z + xc / z, 0), (350 / z + xc / z, 1000 / z), (425 / z + xc / z, 1000 / z)])
+    polygon([(425 / z + xc / z, 1000 / z), (92 / z + xc / z, 0), (17 / z + xc / z, 0), (350 / z + xc / z, 1000 / z),
+             (425 / z + xc / z, 1000 / z)])
 
-    polygon([(775 / z + xc / z, 1000 / z), (1108 / z + xc / z, 0), (1183 / z + xc / z, 0), (850 / z + xc / z, 1000 / z), (775 / z + xc / z, 1000 / z)])
+    polygon([(775 / z + xc / z, 1000 / z), (1108 / z + xc / z, 0), (1183 / z + xc / z, 0), (850 / z + xc / z, 1000 / z),
+             (775 / z + xc / z, 1000 / z)])
 
     # body
 
@@ -215,7 +219,7 @@ def draw_human(xc):
         (270 / z + xc / z, 800 / z),
         (250 / z + xc / z, 850 / z),
         (310 / z + xc / z, 930 / z),
-        ])
+    ])
     polygon([
         (890 / z + xc / z, 930 / z),
         (780 / z + xc / z, 810 / z),
@@ -223,7 +227,7 @@ def draw_human(xc):
         (930 / z + xc / z, 800 / z),
         (950 / z + xc / z, 850 / z),
         (890 / z + xc / z, 930 / z),
-        ])
+    ])
 
     # face
 
@@ -233,12 +237,14 @@ def draw_human(xc):
     # nose
 
     brushColor('brown')
-    polygon([(600 / z + xc / z, 500 / z + 30 / z), (600 / z + xc / z + 26 / z, 500 / z + 16 / z), (600 / z + xc / z - 26 / z, 500 / z + 16 / z), (600 / z + xc / z, 500 / z + 30 / z)])
+    polygon([(600 / z + xc / z, 500 / z + 30 / z), (600 / z + xc / z + 26 / z, 500 / z + 16 / z),
+             (600 / z + xc / z - 26 / z, 500 / z + 16 / z), (600 / z + xc / z, 500 / z + 30 / z)])
 
     # mouth
 
     brushColor('red')
-    polygon([(600 / z + xc / z, 500 / z + 150 / z), (600 / z + xc / z + 150 / z, 500 / z + 60 / z), (600 / z - 150 / z + xc / z, 500 / z + 60 / z), (600 / z + xc / z, 500 / z + 150 / z)])
+    polygon([(600 / z + xc / z, 500 / z + 150 / z), (600 / z + xc / z + 150 / z, 500 / z + 60 / z),
+             (600 / z - 150 / z + xc / z, 500 / z + 60 / z), (600 / z + xc / z, 500 / z + 150 / z)])
 
     # eyes
 
@@ -253,18 +259,20 @@ def draw_human(xc):
 
     def tr(x, y):
         brushColor(212, 42, 255)
-        polygon([(x + xc / z, y), (x + xc / z + 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2), (x + xc / z - 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2)])
+        polygon([(x + xc / z, y), (x + xc / z + 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2),
+                 (x + xc / z - 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2)])
 
     y = (500 - 110) / z
     x = (600 - 219) / z
-    sidelenght = 85 / z
+    sidelength = 85 / z
     for i in range(5):
         a = math.cos(math.pi * (1 / 3 - i / 12))
         b = math.sin(math.pi * (1 / 3 - i / 12))
         c = math.cos(math.pi * (1 / 3 + i / 12))
         d = math.sin(math.pi * (1 / 3 + i / 12))
         brushColor(212, 42, 255)
-        polygon([(x + xc / z, y), (x + xc / z + sidelenght * a, y - sidelenght * b), (x + xc / z - sidelenght * c, y - sidelenght * d)])
+        polygon([(x + xc / z, y), (x + xc / z + sidelength * a, y - sidelength * b),
+                 (x + xc / z - sidelength * c, y - sidelength * d)])
         if i == 3:
             y -= 10 / z
         else:
@@ -280,7 +288,8 @@ def draw_human(xc):
         c = math.cos(math.pi * (1 / 3 + 5 / 12 + i / 12))
         d = math.sin(math.pi * (1 / 3 + 5 / 12 + i / 12))
         brushColor(212, 42, 255)
-        polygon([(x + xc / z, y), (x + xc / z + sidelenght * a, y - sidelenght * b), (x + xc / z - sidelenght * c, y - sidelenght * d)])
+        polygon([(x + xc / z, y), (x + xc / z + sidelength * a, y - sidelength * b),
+                 (x + xc / z - sidelength * c, y - sidelength * d)])
 
         if i == 3:
             x += 40 / z
@@ -315,8 +324,8 @@ def draw_human(xc):
         s.append(coord)
         y -= 1
 
-        brushColor(233, 198, 175)
-        polygon(s)
+    brushColor(233, 198, 175)
+    polygon(s)
 
     x = 1077 / z + xc / z
     y = 60 / z
@@ -343,7 +352,7 @@ def draw_human(xc):
 # create new human
 
 draw_human(1200)
-
+"""
 # banner: python is amazing
 
 brushColor('green')
