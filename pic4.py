@@ -95,7 +95,6 @@ def update_mouth():
         g.moveObjectBy(mouth_help, -7, 0)
 
 
-
 g.onTimer(update_mouth)
 
 # eyes
@@ -526,7 +525,7 @@ g.onTimer(change_color)
 # bow-tie
 
 side = 60
-bow_help = g.rectangle (0, 0, 1, 1)
+bow_help = g.rectangle(0, 0, 1, 1)
 
 
 def update_bow_tie():
