@@ -73,7 +73,7 @@ g.circle(600 / z, 500 / z, 250 / z)
 # nose
 
 g.brushColor('brown')
-g.polygon([(600 / z, 500 / z + 30 / z), (600 / z + 26 / z, 500 / z + 16 / z), 
+g.polygon([(600 / z, 500 / z + 30 / z), (600 / z + 26 / z, 500 / z + 16 / z),
            (600 / z - 26 / z, 500 / z + 16 / z),
            (600 / z, 500 / z + 30 / z)])
 
@@ -90,7 +90,7 @@ def update_mouth():
     global m
     m = 1 / (step + 2)
     g.brushColor('red')
-    mouth = g.polygon([(600 / z, 500 / z + 150 / z), 
+    mouth = g.polygon([(600 / z, 500 / z + 150 / z),
                        (600 / z + 150 * m / z, 500 / z + 60 / z),
                        (600 / z - 150 * m / z, 500 / z + 60 / z),
                        (600 / z, 500 / z + 150 / z)])
@@ -164,7 +164,8 @@ circle_help_object = g.rectangle(0, 0, 1, 1)
 
 def update_inner_eye():
     g.moveObjectBy(circle_help_object, 1, 0)
-    g.moveObjectTo(inner_eye_1, s_circle[2 * int(g.xCoord(circle_help_object))],
+    g.moveObjectTo(inner_eye_1,
+                   s_circle[2 * int(g.xCoord(circle_help_object))],
                    s_circle[2 * int(g.xCoord(circle_help_object)) - 1])
     if g.xCoord(circle_help_object) >= 79:
         g.moveObjectBy(circle_help_object, - 79, 0)
@@ -291,8 +292,7 @@ def draw_human(xc):
     polygon([(425 / z + xc / z, 1000 / z), (92 / z + xc / z, 0),
     (17 / z + xc / z, 0), (350 / z + xc / z, 1000 / z),
              (425 / z + xc / z, 1000 / z)])
-
-    polygon([(775 / z + xc / z, 1000 / z), (1108 / z + xc / z, 0), 
+    polygon([(775 / z + xc / z, 1000 / z), (1108 / z + xc / z, 0),
     (1183 / z + xc / z, 0), (850 / z + xc / z, 1000 / z),
              (775 / z + xc / z, 1000 / z)])
 
@@ -325,15 +325,15 @@ def draw_human(xc):
     # nose
 
     brushColor('brown')
-    polygon([(600 / z + xc / z, 500 / z + 30 / z), 
+    polygon([(600 / z + xc / z, 500 / z + 30 / z),
     (600 / z + xc / z + 26 / z, 500 / z + 16 / z),
-             (600 / z + xc / z - 26 / z, 500 / z + 16 / z), 
+             (600 / z + xc / z - 26 / z, 500 / z + 16 / z),
              (600 / z + xc / z, 500 / z + 30 / z)])
 
     # mouth
 
     brushColor('red')
-    polygon([(600 / z + xc / z, 500 / z + 150 / z), 
+    polygon([(600 / z + xc / z, 500 / z + 150 / z),
     (600 / z + xc / z + 150 / z, 500 / z + 60 / z),
              (600 / z - 150 / z + xc / z, 500 / z + 60 / z),
              (600 / z + xc / z, 500 / z + 150 / z)])
@@ -351,7 +351,7 @@ def draw_human(xc):
 
     def tr(x, y):
         brushColor(212, 42, 255)
-        polygon([(x + xc / z, y), 
+        polygon([(x + xc / z, y),
         (x + xc / z + 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2),
                  (x + xc / z - 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2)])
 
@@ -407,13 +407,15 @@ def draw_human(xc):
     y = 150 / z - b
 
     for i in range(2 * int(b)):
-        x = 123 / z + xc / z - a * ((1 - (y - 150 / z) ** 2 / b ** 2) ** 2) ** 0.25
+        x = 123 / z + xc / z - a *
+        ((1 - (y - 150 / z) ** 2 / b ** 2) ** 2) ** 0.25
 
         coord = (x, y)
         s.append(coord)
         y += 1
     for i in range(2 * int(b)):
-        x = 123 / z + xc / z + a * ((1 - (y - 150 / z) ** 2 / b ** 2) ** 2) ** 0.25
+        x = 123 / z + xc / z + a *
+        ((1 - (y - 150 / z) ** 2 / b ** 2) ** 2) ** 0.25
 
         coord = (x, y)
         s.append(coord)
@@ -428,13 +430,15 @@ def draw_human(xc):
     y = 150 / z - b
 
     for i in range(2 * int(b)):
-        x = 1077 / z + xc / z - a * ((1 - (y - 150 / z) ** 2 / b ** 2) ** 2) ** 0.25
+        x = 1077 / z + xc / z - a *
+        ((1 - (y - 150 / z) ** 2 / b ** 2) ** 2) ** 0.25
 
         coord = (x, y)
         s.append(coord)
         y += 1
     for i in range(2 * int(b)):
-        x = 1077 / z + xc / z + a * ((1 - (y - 150 / z) ** 2 / b ** 2) ** 2) ** 0.25
+        x = 1077 / z + xc / z + a *
+        ((1 - (y - 150 / z) ** 2 / b ** 2) ** 2) ** 0.25
 
         coord = (x, y)
         s.append(coord)
