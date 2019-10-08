@@ -112,11 +112,13 @@ def __initGraph__():
     global _images
     _win = tkinter.Tk()
     _win.configure(bg="white")
-    _win.geometry(str(DEF_GRAPH_WIDTH) + "x" + str(DEF_GRAPH_HEIGHT) + "+100+100")
+    _win.geometry(str(DEF_GRAPH_WIDTH) + "x" +
+                  str(DEF_GRAPH_HEIGHT) + "+100+100")
     _viewPort = None
     _Cw = DEF_GRAPH_WIDTH
     _Ch = DEF_GRAPH_HEIGHT
-    _C = tkinter.Canvas(_win, background='white', bd=0, highlightthickness=1, width=_Cw, height=_Ch)
+    _C = tkinter.Canvas(_win, background='white', bd=0,
+                        highlightthickness=1, width=_Cw, height=_Ch)
     _Cpos = [0, 0]
     _C.place(x=_Cpos[0], y=_Cpos[1])
     _penColor = "black"
@@ -248,7 +250,8 @@ def lineTo(x, y=-1):
     if type(x) == tuple:
         x, y = x
     x, y = transformCoord(x, y)
-    line = _C.create_line(_pos[0], _pos[1], x, y, fill=_penColor, width=_penSize)
+    line = _C.create_line(_pos[0], _pos[1], x, y,
+                          fill=_penColor, width=_penSize)
     _pos = (x, y)
     return line
 
@@ -287,7 +290,8 @@ def polyline(points):
 def rectangle(x1, y1, x2, y2):
     x1, y1 = transformCoord(x1, y1)
     x2, y2 = transformCoord(x2, y2)
-    rect = _C.create_rectangle(x1, y1, x2, y2, outline=_penColor, width=_penSize, fill=_brushColor)
+    rect = _C.create_rectangle(
+        x1, y1, x2, y2, outline=_penColor, width=_penSize, fill=_brushColor)
     return rect
 
 
@@ -298,7 +302,8 @@ def circle(x, y, R):
     y2 = y + R
     x1, y1 = transformCoord(x1, y1)
     x2, y2 = transformCoord(x2, y2)
-    circ = _C.create_oval(x1, y1, x2, y2, outline=_penColor, width=_penSize, fill=_brushColor)
+    circ = _C.create_oval(x1, y1, x2, y2, outline=_penColor,
+                          width=_penSize, fill=_brushColor)
     return circ
 
 
@@ -306,7 +311,8 @@ def polygon(points):
     coord = unpackCoord(points)
     if points[0] != points[-1]:
         points.append(points[0])
-    plg = _C.create_polygon(*coord, outline=_penColor, width=_penSize, fill=_brushColor)
+    plg = _C.create_polygon(*coord, outline=_penColor,
+                            width=_penSize, fill=_brushColor)
     return plg
 
 
@@ -520,3 +526,4 @@ if __name__ == "__main__":
         polygon([(70, 100), (150, i), (230, 100), (70, 100)])
 
     run()
+
