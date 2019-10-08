@@ -90,7 +90,7 @@ def update_mouth():
     global m
     m = 1 / (step + 2)
     g.brushColor('red')
-    mouth = g.polygon([(600 / z, 500 / z + 150 / z),
+    g.polygon([(600 / z, 500 / z + 150 / z),
                        (600 / z + 150 * m / z, 500 / z + 60 / z),
                        (600 / z - 150 * m / z, 500 / z + 60 / z),
                        (600 / z, 500 / z + 150 / z)])
@@ -557,17 +557,17 @@ def update_bow_tie():
     c_mult = math.cos(math.pi * (1 / 3 + angle / 36))
     d_mult = math.sin(math.pi * (1 / 3 + angle / 36))
     g.brushColor('black')
-    bow_tie = g.polygon([(600 / z, 850 / z),
-                         (600 / z + side * a_mult / z,
-                          850 / z - side * b_mult / z),
-                         (600 / z + side * c_mult / z,
-                          850 / z + side * d_mult / z),
-                         (600 / z, 850 / z),
-                         (600 / z - side * c_mult / z,
-                          850 / z - side * d_mult / z),
-                         (600 / z - side * a_mult / z,
-                          850 / z + side * b_mult / z),
-                         (600 / z, 850 / z)])
+    g.polygon([(600 / z, 850 / z),
+               (600 / z + side * a_mult / z,
+                850 / z - side * b_mult / z),
+               (600 / z + side * c_mult / z,
+                850 / z + side * d_mult / z),
+               (600 / z, 850 / z),
+               (600 / z - side * c_mult / z,
+                850 / z - side * d_mult / z),
+               (600 / z - side * a_mult / z,
+                850 / z + side * b_mult / z),
+               (600 / z, 850 / z)])
     g.moveObjectBy(bow_help, 1, 0)
     if g.xCoord(bow_help) >= 72:
         g.moveObjectBy(bow_help, -72, 0)
