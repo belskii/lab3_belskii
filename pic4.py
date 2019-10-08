@@ -38,9 +38,11 @@ for i in range(120):
 # arms
 
 g.brushColor(233, 198, 175)
-g.polygon([(425 / z, 1000 / z), (92 / z, 0), (17 / z, 0), (350 / z, 1000 / z), (425 / z, 1000 / z)])
+g.polygon([(425 / z, 1000 / z), (92 / z, 0), (17 / z, 0),
+           (350 / z, 1000 / z), (425 / z, 1000 / z)])
 
-g.polygon([(775 / z, 1000 / z), (1108 / z, 0), (1183 / z, 0), (850 / z, 1000 / z), (775 / z, 1000 / z)])
+g.polygon([(775 / z, 1000 / z), (1108 / z, 0), (1183 / z, 0),
+           (850 / z, 1000 / z), (775 / z, 1000 / z)])
 
 # body
 
@@ -71,7 +73,8 @@ g.circle(600 / z, 500 / z, 250 / z)
 # nose
 
 g.brushColor('brown')
-g.polygon([(600 / z, 500 / z + 30 / z), (600 / z + 26 / z, 500 / z + 16 / z), (600 / z - 26 / z, 500 / z + 16 / z),
+g.polygon([(600 / z, 500 / z + 30 / z), (600 / z + 26 / z, 500 / z + 16 / z), 
+           (600 / z - 26 / z, 500 / z + 16 / z),
            (600 / z, 500 / z + 30 / z)])
 
 # mouth
@@ -87,7 +90,8 @@ def update_mouth():
     global m
     m = 1 / (step + 2)
     g.brushColor('red')
-    mouth = g.polygon([(600 / z, 500 / z + 150 / z), (600 / z + 150 * m / z, 500 / z + 60 / z),
+    mouth = g.polygon([(600 / z, 500 / z + 150 / z), 
+                       (600 / z + 150 * m / z, 500 / z + 60 / z),
                        (600 / z - 150 * m / z, 500 / z + 60 / z),
                        (600 / z, 500 / z + 150 / z)])
     step += 1
@@ -98,7 +102,8 @@ def update_mouth():
 g.onTimer(update_mouth)
 
 # eyes
-colors = ('green', 'blue', 'red', 'yellow', 'black', 'white', 'orange', 'magenta')
+colors = ('green', 'blue', 'red', 'yellow',
+          'black', 'white', 'orange', 'magenta')
 
 g.brushColor('blue')
 eye_1 = g.circle(525 / z, 430 / z, 60 / z)
@@ -172,7 +177,8 @@ g.onTimer(update_inner_eye)
 
 def tr(x, y):
     g.brushColor(212, 42, 255)
-    g.polygon([(x, y), (x + 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2), (x - 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2)])
+    g.polygon([(x, y), (x + 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2),
+               (x - 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2)])
 
 
 y = (500 - 110) / z
@@ -184,7 +190,8 @@ for i in range(5):
     c = math.cos(math.pi * (1 / 3 + i / 12))
     d = math.sin(math.pi * (1 / 3 + i / 12))
     g.brushColor(212, 42, 255)
-    g.polygon([(x, y), (x + sidelenght * a, y - sidelenght * b), (x - sidelenght * c, y - sidelenght * d)])
+    g.polygon([(x, y), (x + sidelenght * a, y - sidelenght * b),
+               (x - sidelenght * c, y - sidelenght * d)])
     if i == 3:
         y -= 10 / z
     else:
@@ -200,7 +207,8 @@ for i in range(5):
     c = math.cos(math.pi * (1 / 3 + 5 / 12 + i / 12))
     d = math.sin(math.pi * (1 / 3 + 5 / 12 + i / 12))
     g.brushColor(212, 42, 255)
-    g.polygon([(x, y), (x + sidelenght * a, y - sidelenght * b), (x - sidelenght * c, y - sidelenght * d)])
+    g.polygon([(x, y), (x + sidelenght * a, y - sidelenght * b),
+               (x - sidelenght * c, y - sidelenght * d)])
 
     if i == 3:
         x += 40 / z
@@ -280,10 +288,12 @@ def draw_human(xc):
     # arms
 
     brushColor(233, 198, 175)
-    polygon([(425 / z + xc / z, 1000 / z), (92 / z + xc / z, 0), (17 / z + xc / z, 0), (350 / z + xc / z, 1000 / z),
+    polygon([(425 / z + xc / z, 1000 / z), (92 / z + xc / z, 0),
+    (17 / z + xc / z, 0), (350 / z + xc / z, 1000 / z),
              (425 / z + xc / z, 1000 / z)])
 
-    polygon([(775 / z + xc / z, 1000 / z), (1108 / z + xc / z, 0), (1183 / z + xc / z, 0), (850 / z + xc / z, 1000 / z),
+    polygon([(775 / z + xc / z, 1000 / z), (1108 / z + xc / z, 0), 
+    (1183 / z + xc / z, 0), (850 / z + xc / z, 1000 / z),
              (775 / z + xc / z, 1000 / z)])
 
     # body
@@ -315,14 +325,18 @@ def draw_human(xc):
     # nose
 
     brushColor('brown')
-    polygon([(600 / z + xc / z, 500 / z + 30 / z), (600 / z + xc / z + 26 / z, 500 / z + 16 / z),
-             (600 / z + xc / z - 26 / z, 500 / z + 16 / z), (600 / z + xc / z, 500 / z + 30 / z)])
+    polygon([(600 / z + xc / z, 500 / z + 30 / z), 
+    (600 / z + xc / z + 26 / z, 500 / z + 16 / z),
+             (600 / z + xc / z - 26 / z, 500 / z + 16 / z), 
+             (600 / z + xc / z, 500 / z + 30 / z)])
 
     # mouth
 
     brushColor('red')
-    polygon([(600 / z + xc / z, 500 / z + 150 / z), (600 / z + xc / z + 150 / z, 500 / z + 60 / z),
-             (600 / z - 150 / z + xc / z, 500 / z + 60 / z), (600 / z + xc / z, 500 / z + 150 / z)])
+    polygon([(600 / z + xc / z, 500 / z + 150 / z), 
+    (600 / z + xc / z + 150 / z, 500 / z + 60 / z),
+             (600 / z - 150 / z + xc / z, 500 / z + 60 / z),
+             (600 / z + xc / z, 500 / z + 150 / z)])
 
     # eyes
 
@@ -337,7 +351,8 @@ def draw_human(xc):
 
     def tr(x, y):
         brushColor(212, 42, 255)
-        polygon([(x + xc / z, y), (x + xc / z + 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2),
+        polygon([(x + xc / z, y), 
+        (x + xc / z + 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2),
                  (x + xc / z - 60 / z * 1 / 2, y - 60 / z * 3 ** 0.5 / 2)])
 
     y = (500 - 110) / z
@@ -349,7 +364,8 @@ def draw_human(xc):
         c = math.cos(math.pi * (1 / 3 + i / 12))
         d = math.sin(math.pi * (1 / 3 + i / 12))
         brushColor(212, 42, 255)
-        polygon([(x + xc / z, y), (x + xc / z + sidelength * a, y - sidelength * b),
+        polygon([(x + xc / z, y),
+        (x + xc / z + sidelength * a, y - sidelength * b),
                  (x + xc / z - sidelength * c, y - sidelength * d)])
         if i == 3:
             y -= 10 / z
@@ -366,7 +382,8 @@ def draw_human(xc):
         c = math.cos(math.pi * (1 / 3 + 5 / 12 + i / 12))
         d = math.sin(math.pi * (1 / 3 + 5 / 12 + i / 12))
         brushColor(212, 42, 255)
-        polygon([(x + xc / z, y), (x + xc / z + sidelength * a, y - sidelength * b),
+        polygon([(x + xc / z, y),
+        (x + xc / z + sidelength * a, y - sidelength * b),
                  (x + xc / z - sidelength * c, y - sidelength * d)])
 
         if i == 3:
@@ -537,11 +554,15 @@ def update_bow_tie():
     d_mult = math.sin(math.pi * (1 / 3 + angle / 36))
     g.brushColor('black')
     bow_tie = g.polygon([(600 / z, 850 / z),
-                         (600 / z + side * a_mult / z, 850 / z - side * b_mult / z),
-                         (600 / z + side * c_mult / z, 850 / z + side * d_mult / z),
+                         (600 / z + side * a_mult / z,
+                          850 / z - side * b_mult / z),
+                         (600 / z + side * c_mult / z,
+                          850 / z + side * d_mult / z),
                          (600 / z, 850 / z),
-                         (600 / z - side * c_mult / z, 850 / z - side * d_mult / z),
-                         (600 / z - side * a_mult / z, 850 / z + side * b_mult / z),
+                         (600 / z - side * c_mult / z,
+                          850 / z - side * d_mult / z),
+                         (600 / z - side * a_mult / z,
+                          850 / z + side * b_mult / z),
                          (600 / z, 850 / z)])
     g.moveObjectBy(bow_help, 1, 0)
     if g.xCoord(bow_help) >= 72:
