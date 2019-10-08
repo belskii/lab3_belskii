@@ -91,9 +91,9 @@ def update_mouth():
     m = 1 / (step + 2)
     g.brushColor('red')
     g.polygon([(600 / z, 500 / z + 150 / z),
-                       (600 / z + 150 * m / z, 500 / z + 60 / z),
-                       (600 / z - 150 * m / z, 500 / z + 60 / z),
-                       (600 / z, 500 / z + 150 / z)])
+               (600 / z + 150 * m / z, 500 / z + 60 / z),
+               (600 / z - 150 * m / z, 500 / z + 60 / z),
+               (600 / z, 500 / z + 150 / z)])
     step += 1
     if step >= 7:
         g.moveObjectBy(mouth_help, -7, 0)
