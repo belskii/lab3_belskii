@@ -47,8 +47,8 @@ class Ball:
             angl = (90 - 180 / n) / 180 * math.pi
             x1 = sid / 2
             y1 = r * math.sin(angl)
-            points = [(x - x1, y - y1), (x - r, y), (x - x1, y + y1), 
-                      (x + x1, y + y1), (x + r,y), (x + x1,y - y1), 
+            points = [(x - x1, y - y1), (x - r, y), (x - x1, y + y1),
+                      (x + x1, y + y1), (x + r, y), (x + x1, y - y1),
                       (x - x1, y - y1)]
             self.id = canv.create_polygon(points, fill=self.color, outline="black")
         self.live = 100  # time of live
@@ -197,8 +197,8 @@ class Target:
             angl = (90 - 180 / n) / 180 * math.pi
             x1 = sid / 2
             y1 = r * math.sin(angl)
-            points = [(x - x1, y- y1), (x - r, y), (x - x1, y + y1), 
-                      (x + x1, y + y1), (x + r,y), (x + x1,y - y1), 
+            points = [(x - x1, y - y1), (x - r, y), (x - x1, y + y1),
+                      (x + x1, y + y1), (x + r, y), (x + x1, y - y1),
                       (x - x1, y - y1)]
             self.id = canv.create_polygon(points, fill=color, outline="black")
 
