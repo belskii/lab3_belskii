@@ -7,8 +7,8 @@ import time
 root = Tk()
 fr = Frame(root)
 root.geometry('800x600')
-canv = Canvas(root, bg = 'white')
-canv.pack(fill = BOTH, expand = 1)
+canv = Canvas(root, bg='white')
+canv.pack(fill=BOTH, expand=1)
 
 
 class Ball:
@@ -47,10 +47,10 @@ class Ball:
             angl = (90 - 180 / n) / 180 * math.pi
             x1 = sid / 2
             y1 = r * math.sin(angl)
-            points = [(x - x1, y- y1), (x - r, y), (x - x1, y + y1),
-                      (x + x1, y + y1), (x + r,y), (x + x1,y - y1),
+            points = [(x - x1, y - y1), (x - r, y), (x - x1, y + y1), 
+                      (x + x1, y + y1), (x + r,y), (x + x1,y - y1), 
                       (x - x1, y - y1)]
-            self.id = canv.create_polygon(points, fill = self.color, outline = "black")
+            self.id = canv.create_polygon(points, fill=self.color, outline="black")
         self.live = 100  # time of live
         self.game = g
         self.a = a  # a=0 start ball, a=1 fragment
@@ -107,7 +107,7 @@ class Gun:
         self.y = 500  # starting coord of gun
         self.vx = 4  # starting speed of gun
         self.x = 20
-        self.id = canv.create_line(self.x, self.y, self.x + 30, self.y - 30, fill = 'black', width = 7)
+        self.id = canv.create_line(self.x, self.y, self.x + 30, self.y - 30, fill='black', width=7)
         self.game = g
 
     def fire2_start(self, event):  # start of fire
@@ -130,9 +130,9 @@ class Gun:
         y = root.winfo_pointery() - root.winfo_rooty()
         self.an = math.atan((y - self.y) / (x - 20 + 0.00001))
         if self.f2_on:
-            canv.itemconfig(self.id, fill = 'orange')
+            canv.itemconfig(self.id, fill='orange')
         else:
-            canv.itemconfig(self.id, fill = 'black')
+            canv.itemconfig(self.id, fill='black')
         canv.coords(self.id, self.x, self.y, self.x + max(self.f2_power, 20) * math.cos(self.an),
                     self.y + max(self.f2_power, 20) * math.sin(self.an))
 
@@ -140,9 +140,9 @@ class Gun:
         if self.f2_on:
             if self.f2_power < 70:
                 self.f2_power += 1
-            canv.itemconfig(self.id, fill = 'orange')
+            canv.itemconfig(self.id, fill='orange')
         else:
-            canv.itemconfig(self.id, fill = 'black')
+            canv.itemconfig(self.id, fill='black')
 
     def move_gun(self):
         self.x += self.vx
@@ -166,7 +166,7 @@ class Target:
             self.id = canv.create_rectangle(0, 0, 0, 0)
         else:
             points = [(0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
-            self.id = canv.create_polygon(points, fill = self.color, outline = "black")
+            self.id = canv.create_polygon(points, fill=self.color, outline="black")
 
     def new_target(self):
         x = self.x
@@ -175,7 +175,7 @@ class Target:
         r = self.r
         if self.type == 1 or self.type == 2:
             canv.coords(self.id, x - r, y - r, x + r, y + r)
-            canv.itemconfig(self.id, fill = color)
+            canv.itemconfig(self.id, fill=color)
         elif self.type == 3:
             ang = 72 / 180 * math.pi
             b = 2 * r * math.cos((90 - 72 / 2) / 180 * math.pi)  # side
@@ -190,17 +190,17 @@ class Target:
                       (x + b12 - x1 - b1, y + b2 + b22 - y1),
                       (x + b + b1 - x1, y + b2 - y1), (x + b - x1, y - y1),
                       (x - x1, y - y1)]
-            self.id = canv.create_polygon(points, fill = color, outline = "black")
+            self.id = canv.create_polygon(points, fill=color, outline="black")
         elif self.type == 4:
             n = self.type + 2
             sid = 2 * r * math.cos((90 - 180 / n) / 180 * math.pi)
             angl = (90 - 180 / n) / 180 * math.pi
             x1 = sid / 2
             y1 = r * math.sin(angl)
-            points = [(x - x1, y- y1), (x - r, y), (x - x1, y + y1),
-                      (x + x1, y + y1), (x + r,y), (x + x1,y - y1),
+            points = [(x - x1, y- y1), (x - r, y), (x - x1, y + y1), 
+                      (x + x1, y + y1), (x + r,y), (x + x1,y - y1), 
                       (x - x1, y - y1)]
-            self.id = canv.create_polygon(points, fill = color, outline = "black")
+            self.id = canv.create_polygon(points, fill=color, outline="black")
 
     def move_target(self):
         self.y += self.vy
@@ -221,12 +221,12 @@ class Game:
         self.g1 = Gun(self)  # cannon
         self.continuity = 1  # if continuity = 1 at least 1 target lives, if 0 - no one
         self.points = 0
-        self.id_points = canv.create_text(30, 30, text = self.points, font = '40')
+        self.id_points = canv.create_text(30, 30, text=self.points, font='40')
 
     def new_game(self, event=''):
-        screen1 = canv.create_text(350, 200, text = '', font = '40')
+        screen1 = canv.create_text(350, 200, text='', font='40')
         frases = ['Вы уничтожили ', ' целей за ', ' выстрел.', ' выстрела', ' выстрелов', 'Вы сделали ',
-               ' выстрел']
+                  ' выстрел']
         self.balls = []
         self.bullet = 0
         self.targets = [Target(rnd(1, 5)) for _ in range(self.number_of_targets)]
@@ -250,11 +250,11 @@ class Game:
                             canv.delete(t.id)
                             self.hit()
                 if self.bullet == 1:  # text during the game
-                    canv.itemconfig(screen1, text = frases[5] + str(self.bullet) + frases[6])
+                    canv.itemconfig(screen1, text=frases[5] + str(self.bullet) + frases[6])
                 elif (self.bullet % 10 >= 2) and (self.bullet % 10 <= 4):
-                    canv.itemconfig(screen1, text = frases[5] + str(self.bullet) + frases[3])
+                    canv.itemconfig(screen1, text=frases[5] + str(self.bullet) + frases[3])
                 else:
-                    canv.itemconfig(screen1, text = frases[5] + str(self.bullet) + frases[4])
+                    canv.itemconfig(screen1, text=frases[5] + str(self.bullet) + frases[4])
                 canv.update()
                 time.sleep(0.009)
                 self.g1.move_gun()
@@ -276,7 +276,7 @@ class Game:
                 canv.update()
                 time.sleep(2)
                 break
-        canv.itemconfig(screen1, text = '')
+        canv.itemconfig(screen1, text='')
         root.after(500, self.new_game)
 
     def live_checker(self):  # it check lives of targets
@@ -290,7 +290,7 @@ class Game:
 
     def hit(self):
         self.points += 1
-        canv.itemconfig(self.id_points, text = self.points)
+        canv.itemconfig(self.id_points, text=self.points)
 
 
 game1 = Game()
