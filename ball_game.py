@@ -6,7 +6,8 @@ WIDTH = 800
 HEIGHT = 600
 g = 10  # g per time unit
 dt = 50
-cs = 1.01 # collision speedup
+cs = 1.01  # collision speedup
+
 
 class Ball:
     def __init__(self):
